@@ -1,0 +1,123 @@
+.container {
+    background-color: rgb(239, 239, 239);
+    background-size: 100% ;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#c4bab8; 
+    color: white;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 15pt;
+}
+
+
+.nav a:hover {
+    background-color: #695e5c; 
+}
+
+
+.nav a + a {
+    margin-left: 50px;
+}
+
+
+.nav a {
+    transition: background-color 0.3s;
+}
+
+
+.home img{
+    width: 712px;
+    height:728px;
+   margin-left: 800px;
+}
+
+.home {
+    display: flex;
+    flex: 1; 
+}
+
+.text{
+    margin-top: 150px;
+    font-size: 24px;
+    margin-left:-1100px ;
+   
+}
+
+.text h1, .text h3 {
+    color: #695e5c;
+}
+.about {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.about-text {
+    font-size: 24px;
+    margin-left: 20px; 
+    flex: 1; 
+    text-align: justify; 
+    padding: 100px; 
+
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+}
+
+.gallery-image {
+    width: 100%; 
+    height: 500px; 
+    object-fit: cover; 
+}
+
+.contact {
+    background-image: url("images/bg.jpg");
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 100vh;
+    
+}
+
+form{
+    margin-left: 200px;
+}
+form input {
+    width:350%;
+    height: 50px;
+    display: block;
+    margin: 10px auto; 
+    border: none;
+    border-radius: 10px; 
+    
+}
+form textarea{
+    width:350%;
+    display: block;
+    margin: 10px auto; 
+    border-radius: 10px; 
+}
+form  input[type="button"] {
+    background-color: #948580;
+    color: #fff;
+    border: none;
+}
+form h2 {
+    text-align: center; 
+    font-size: 24px;
+}
