@@ -4,56 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-    <style>
-        body {
-            background-image: url("images/bg.jpg");
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
 
-        form {
-            text-align: center;
-        }
+<style>
+h2{
+    margin-left: 100px;
+    margin-top: -44px;
+}
+.registration-form {
+   max-width: 400px;
+   margin: 0 auto;
+   padding: 115px;
+   background-image: url("images/bg.jpg");
+   
+}
 
-        input {
-            margin: 10px;
-            padding: 5px;
-            width: 50%;
-            height: 25px;
-        }
+.form-group {
+    margin-bottom: 15px;
+}
 
-        textarea {
-            margin: 10px;
-            padding: 5px;
-            width: 50%;
-        }
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
 
-        input[type="button"] {
-            background-color: #948580;
-            color: #fff;
-            border: none;
-        }
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="password"],
+.form-group input[type="url"]
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-        .custom-button {
-            height: 40px;
-        }
+.radio-buttons {
+    display: flex;
+}
+
+.radio-buttons input[type="radio"] {
+    margin-right: 5px;
+}
+
+.radio-buttons label {
+    margin-right: 15px;
+}
+
+.checkboxes {
+    display: flex;
+}
+
+.checkboxes input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.checkboxes label {
+    margin-right: 15px;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    margin-right: 5px;
+    display: flex;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.custom-button {
+    background-color:black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.custom-button:hover {
+    background-color: #474747;
+}
+
     </style>
 </head>
 <body>
-    <form>
+    <form class="registration-form">
         <h2>Registration Form</h2>
-        <input type="text" placeholder="Name"/>
-        <input type="email" placeholder="Email"/>
-        <input type="tel" placeholder="Phone Number"/>
-        <input type="password" placeholder="Password"/>
-        <textarea rows="10" cols="20" placeholder="Address"></textarea>
-        <input type="button" value="Register" class="custom-button"/>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="radio-buttons">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="current-location">Current Location:</label>
+            <input type="text" id="city" name="city" placeholder="City" required>
+            <input type="text" id="state" name="state" placeholder="State" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="qualification">Qualification:</label>
+            <select id="qualification" name="qualification">
+                <option>Post Graduate</option>
+                <option>Graduate</option>
+                <option>Under Graduate</option>
+                <option>Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="job-status">Job Status:</label>
+            <select id="job-status" name="job-status">
+                <option value="Employed">Employed</option>
+                <option value="Unemployed">Unemployed</option>
+                <option value="Student">Student</option>
+                <option value="Self-Employed">Self-Employed</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Hobbies:</label>
+            <div class="checkboxes">
+                <input type="checkbox" id="dance" name="hobbies[]" value="Dance">
+                <label for="dance">Dance</label>
+                <input type="checkbox" id="music" name="hobbies[]" value="Music">
+                <label for ="music">Music</label>
+                <input type="checkbox" id="drawing" name="hobbies[]" value="Drawing">
+                <label for="drawing">Drawing</label>
+                <input type="checkbox" id="games" name="hobbies[]" value="Games">
+                <label for="games">Games</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="photo">My Photo:</label>
+            <input type="file" id="photo" name="photo">
+        </div>
+
+        <div class="form-group">
+            <label for="website">Website or Blog:</label>
+            <input type="url" id="website" name="website" placeholder="https://www.example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="favorite-color">Favorite Color:</label>
+            <input type="color" id="favorite-color" name="favorite-color">
+        </div>
+        <div class="form-group">
+            <label for="about-me">About Me:</label>
+            <textarea id="about-me" name="about-me" rows="8"></textarea>
+        </div>
+
+        <div class="form-actions">
+            <input type="submit" value="Submit" class="custom-button">
+            <input type="reset" value="Reset" class="custom-button">
+        </div>
     </form>
 </body>
 </html>
+
 
 
 
